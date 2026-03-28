@@ -19,7 +19,7 @@ class PageController extends Controller
     {
         return view('about', [
             'title' => 'About Me',
-            'name' => 'Your Name',
+            'name' => 'Bilal Abazaoglu',
             'study' => 'Programming Student',
             'location' => 'Belgium',
             'bio' => 'I am a student who enjoys technology, web development, and everything related to cars. This website was built with Laravel to practice the MVC pattern.',

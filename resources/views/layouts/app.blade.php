@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'My Laravel Website' }}</title>
+    <title>{{ $title ?? 'AutoRateForSale' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -27,7 +27,8 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>Created with Laravel MVC for school assignment.</p>
+            <p>&copy; {{ date('Y') }} AutoRateForSale. All rights reserved.</p>
+            <p>Designed and developed by <a href="https://github.com/BillAbz" target="_blank">Bilal Abazaoglu</a>.</p>
         </div>
     </footer>
 </body>

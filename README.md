@@ -1,3 +1,25 @@
+# Laravel Mini Website
+
+This is a Laravel mini website created for a school assignment.
+
+## Features
+- 6 pages
+- Navigation menu
+- MVC structure
+- Contact form with validation
+- Custom styling
+
+## Run the project
+1. composer install
+2. npm install
+3. cp .env.example .env
+4. php artisan key:generate
+5. php artisan serve
+6. npm run dev
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
