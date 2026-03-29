@@ -30,6 +30,15 @@
             <label for="description">Description</label>
             <textarea id="description" name="description" rows="6">{{ old('description', $car->description) }}</textarea>
 
+            <label>Rating</label>
+            <select name="rating">
+                @for($i = 1; $i <= 5; $i++)
+                    <option value="{{ $i }}" {{ $car->rating == $i ? 'selected' : '' }}>
+                        {{ str_repeat('⭐', $i) }}
+                    </option>
+                @endfor
+            </select>
+
             <label for="image">Image URL</label>
             <input type="text" id="image" name="image" value="{{ old('image', $car->image) }}">
 

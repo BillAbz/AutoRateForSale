@@ -9,6 +9,16 @@
     <div class="button-group">
         <a href="{{ route('cars.create') }}" class="btn">+ Add Car</a>
     </div>
+    @if(session('success'))
+        <div class="success-box">
+            {{ session('success') }}
+        </div>
+    @endif
+    <form method="GET" action="{{ route('cars') }}" class="search-bar">
+        <input type="text" name="search" placeholder="Search cars..." value="{{ request('search') }}">
+        <button type="submit" class="btn">Search</button>
+    </form>
+    
 
     @if($cars->count())
         <section class="grid-3">
@@ -22,12 +32,16 @@
                         <h2>{{ $car->name }}</h2>
                         <p><strong>Type:</strong> {{ $car->type }}</p>
                         <p>{{ $car->description }}</p>
+                        <p class="rating">
+                            {{ str_repeat('⭐', $car->rating) }}
+                        </p>
                     </div>
 
                     <div class="actions">
                         <a href="{{ route('cars.edit', $car->id) }}" class="btn action-btn">Edit</a>
 
-                        <form action="{{ route('cars.destroy', $car->id) }}" method="POST" class="action-form">
+                        <form action="{{ route('cars.destroy', $car->id) }}" method="POST" class="action-form"
+                            onsubmit="return confirm('Are you sure?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-secondary action-btn">Delete</button>
@@ -36,6 +50,11 @@
                 </article>
             @endforeach
         </section>
+        @if($cars->hasPages())
+            <div class="pagination-wrapper">
+                {{ $cars->links('vendor.pagination.default') }}
+            </div>
+        @endif
     @else
         <div class="empty-state">
             <p>No cars added yet.</p>

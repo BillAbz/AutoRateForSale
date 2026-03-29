@@ -29,6 +29,15 @@
             <label for="description">Description</label>
             <textarea id="description" name="description" rows="6" placeholder="Write a short description">{{ old('description') }}</textarea>
 
+            <label>Rating</label>
+            <select name="rating">
+                <option value="1">⭐ 1</option>
+                <option value="2">⭐⭐ 2</option>
+                <option value="3" selected>⭐⭐⭐ 3</option>
+                <option value="4">⭐⭐⭐⭐ 4</option>
+                <option value="5">⭐⭐⭐⭐⭐ 5</option>
+            </select>
+
             <label for="image">Image URL</label>
             <input type="text" id="image" name="image" value="{{ old('image') }}" placeholder="https://example.com/car.jpg">
 
